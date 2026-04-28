@@ -1,0 +1,39 @@
+name: Deploy Landing
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy on server
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: 77.233.221.119
+          username: root
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          port: 22
+          script_stop: true
+          script: |
+            set -eu
+            export APP_DIR="/opt/frendly"
+            export ENV_FILE="${APP_DIR}/.env.production"
+            export LANDING_DIR="${APP_DIR}/landing"
+            export LANDING_REPO_URL="https://github.com/sarboys/frendly_landing.git"
+            export LANDING_BRANCH="main"
+            export LANDING_TARGET_SHA="${{ github.sha }}"
+
+            if [ ! -x "${APP_DIR}/scripts/deploy-landing.sh" ]; then
+              echo "Missing deploy script. Deploy backend once first." >&2
+              exit 1
+            fi
+
+            "${APP_DIR}/scripts/deploy-landing.sh"
