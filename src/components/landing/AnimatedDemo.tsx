@@ -785,45 +785,47 @@ const SceneAfterDark = ({ frame }: { frame: number }) => {
 
       {/* Header */}
       <div
-        className="relative px-5 pt-4 flex items-center justify-between shrink-0"
+        className="relative px-4 pt-3 shrink-0"
         style={{ opacity: headerIn, transform: `translateY(${(1 - headerIn) * -10}px)` }}
       >
-        <div className="w-8 h-8 rounded-full flex items-center justify-center">
-          <ChevronDown className="w-5 h-5 rotate-90 text-white" strokeWidth={2.4} />
-        </div>
-        <div className="flex items-center gap-2">
-          <Moon className="w-4 h-4" style={{ color: "hsl(var(--ad-magenta))" }} />
-          <span
-            className="font-display text-[14px] font-bold uppercase tracking-[0.14em] bg-clip-text text-transparent"
-            style={{ backgroundImage: "var(--gradient-neon)" }}
-          >
-            AFTER DARK
-          </span>
-        </div>
-        <div className="w-8 h-8 rounded-full flex items-center justify-center">
-          <ShieldCheck className="w-5 h-5" style={{ color: "hsl(var(--ad-cyan))" }} strokeWidth={2.2} />
+        <div className="h-8 flex items-center justify-between">
+          <div className="w-8 h-8 rounded-full flex items-center justify-center">
+            <ChevronDown className="w-4 h-4 rotate-90 text-white/90" strokeWidth={2.3} />
+          </div>
+          <div className="flex items-center gap-1.5 min-w-0">
+            <Moon className="w-3.5 h-3.5" style={{ color: "hsl(var(--ad-magenta))" }} />
+            <span
+              className="font-display tracking-normal text-[11px] font-bold uppercase bg-clip-text text-transparent"
+              style={{ backgroundImage: "var(--gradient-neon)" }}
+            >
+              AFTER DARK
+            </span>
+          </div>
+          <div className="w-8 h-8 rounded-full flex items-center justify-center">
+            <ShieldCheck className="w-4 h-4" style={{ color: "hsl(var(--ad-cyan))" }} strokeWidth={2.2} />
+          </div>
         </div>
       </div>
 
       {/* Hero */}
       <div
-        className="relative px-5 mt-5 shrink-0"
+        className="relative px-4 mt-3 shrink-0"
         style={{ opacity: headerIn, transform: `translateY(${(1 - headerIn) * 14}px)` }}
       >
-        <p className="font-display text-[11px] uppercase tracking-[0.14em] font-semibold flex items-center gap-2" style={{ color: "hsl(var(--ad-fg-mute))" }}>
+        <p className="text-[9.5px] uppercase tracking-normal font-semibold flex items-center gap-1.5" style={{ color: "hsl(var(--ad-fg-mute))" }}>
           <span style={{ color: "hsl(var(--ad-gold))" }}>✧</span> Сегодня ночью
         </p>
-        <div className="mt-2 flex items-start justify-between gap-3">
-          <p className="font-display font-semibold text-[26px] leading-[1.05] tracking-[-0.04em] text-white">
+        <div className="mt-2 flex items-end justify-between gap-3">
+          <p className="font-display tracking-normal font-semibold text-[21px] leading-[1.08] text-white">
             <span className="whitespace-nowrap">8 приватных</span>
             <br />
             события
           </p>
           <button
-            className="mt-1 h-10 px-3.5 rounded-full font-display text-[12px] font-bold text-white shrink-0"
+            className="h-8 px-3 rounded-full font-display tracking-normal text-[10px] font-bold text-white shrink-0"
             style={{
               background: "var(--gradient-neon)",
-              boxShadow: "0 14px 42px hsl(var(--ad-magenta) / 0.38)",
+              boxShadow: "0 12px 32px hsl(var(--ad-magenta) / 0.32)",
               transform: `scale(${1 - requestPress * 0.04})`,
             }}
           >
@@ -834,18 +836,18 @@ const SceneAfterDark = ({ frame }: { frame: number }) => {
 
       {/* Search */}
       <div
-        className="relative px-5 mt-5 shrink-0"
+        className="relative px-4 mt-3 shrink-0"
         style={{ opacity: controlsIn, transform: `translateY(${(1 - controlsIn) * 10}px)` }}
       >
         <div
-          className="h-12 rounded-[18px] border flex items-center gap-3 px-4"
+          className="h-9 rounded-[16px] border flex items-center gap-2.5 px-3"
           style={{
             borderColor: "hsl(var(--ad-border))",
-            background: "hsl(var(--ad-bg) / 0.62)",
+            background: "hsl(var(--ad-bg) / 0.58)",
           }}
         >
-          <Search className="w-4 h-4 shrink-0" style={{ color: "hsl(var(--ad-fg-mute))" }} />
-          <span className="text-[12.5px] whitespace-nowrap truncate" style={{ color: "hsl(var(--ad-fg-mute))" }}>
+          <Search className="w-3.5 h-3.5 shrink-0" style={{ color: "hsl(var(--ad-fg-mute))" }} />
+          <span className="text-[10.5px] whitespace-nowrap truncate" style={{ color: "hsl(var(--ad-fg-mute))" }}>
             Найти событие или место
           </span>
         </div>
@@ -853,7 +855,7 @@ const SceneAfterDark = ({ frame }: { frame: number }) => {
 
       {/* Category chips */}
       <div
-        className="relative pl-5 pr-0 mt-3 flex gap-2 overflow-hidden shrink-0"
+        className="relative px-4 mt-2.5 grid grid-cols-2 gap-1.5 shrink-0"
         style={{ opacity: controlsIn, transform: `translateY(${(1 - controlsIn) * 10}px)` }}
       >
         {cats.map((c, i) => {
@@ -861,34 +863,34 @@ const SceneAfterDark = ({ frame }: { frame: number }) => {
           return (
             <div
               key={c.t}
-              className="h-9 px-3.5 rounded-full flex items-center gap-1.5 text-[12px] font-bold whitespace-nowrap border transition-all"
+              className="h-7 min-w-0 rounded-full flex items-center justify-center gap-1 text-[9px] font-bold whitespace-nowrap border transition-all"
               style={{
                 background: sel ? "var(--gradient-neon)" : "hsl(var(--ad-surface) / 0.72)",
                 borderColor: sel ? "transparent" : "hsl(var(--ad-border))",
                 color: sel ? "hsl(var(--ad-fg))" : "hsl(var(--ad-fg-soft))",
-                boxShadow: sel ? "var(--shadow-neon)" : undefined,
+                boxShadow: sel ? "0 10px 24px hsl(var(--ad-magenta) / 0.24)" : undefined,
               }}
             >
-              {c.e && <span className="text-[14px]">{c.e}</span>}
-              {c.t}
+              {c.e && <span className="text-[10px] leading-none">{c.e}</span>}
+              <span className="truncate">{c.t}</span>
             </div>
           );
         })}
       </div>
 
       {/* Events */}
-      <div className="relative flex-1 min-h-0 px-5 mt-3 pb-3 overflow-hidden">
+      <div className="relative flex-1 min-h-0 px-4 mt-3 pb-3 overflow-hidden">
         <div
-          className="relative rounded-[24px] overflow-hidden border"
+          className="relative rounded-[20px] overflow-hidden border"
           style={{
             borderColor: "hsl(var(--ad-border))",
             background: "hsl(var(--ad-surface) / 0.92)",
             opacity: eventIn,
-            transform: `translateY(${(1 - eventIn) * 20}px)`,
-            boxShadow: "0 18px 55px hsl(var(--ad-bg) / 0.48)",
+            transform: `translateY(${(1 - eventIn) * 16}px)`,
+            boxShadow: "0 16px 44px hsl(var(--ad-bg) / 0.46)",
           }}
         >
-          <div className="relative h-[76px] overflow-hidden">
+          <div className="relative h-[86px] overflow-hidden">
             <div
               className="absolute inset-0"
               style={{
@@ -897,25 +899,25 @@ const SceneAfterDark = ({ frame }: { frame: number }) => {
               }}
             />
             <div className="absolute inset-0 opacity-30" style={{ backgroundImage: "linear-gradient(135deg, transparent 0 42%, hsl(var(--ad-cyan) / 0.45) 43% 45%, transparent 46% 100%)" }} />
-            <div className="absolute top-2.5 left-2.5 h-5 px-2 rounded-full bg-black/35 backdrop-blur flex items-center gap-1 text-[9px] font-bold text-white">
-              <Flame className="w-3 h-3" style={{ color: "hsl(var(--ad-magenta))" }} />
+            <div className="absolute top-2.5 left-2.5 h-5 px-2 rounded-full bg-black/35 backdrop-blur flex items-center gap-1 text-[8.5px] font-bold text-white">
+              <Flame className="w-2.5 h-2.5" style={{ color: "hsl(var(--ad-magenta))" }} />
               Найтлайф
             </div>
-            <div className="absolute top-2.5 right-2.5 h-5 px-2 rounded-full bg-black/35 backdrop-blur flex items-center gap-1 text-[9px] font-bold" style={{ color: "hsl(var(--ad-cyan))" }}>
-              <ShieldCheck className="w-3 h-3" />
+            <div className="absolute top-2.5 right-2.5 h-5 px-2 rounded-full bg-black/35 backdrop-blur flex items-center gap-1 text-[8.5px] font-bold" style={{ color: "hsl(var(--ad-cyan))" }}>
+              <ShieldCheck className="w-2.5 h-2.5" />
               Verified
             </div>
             <div className="absolute bottom-2.5 left-3 right-3">
-              <p className="font-display text-[19px] leading-none font-semibold text-white tracking-[-0.04em]">
+              <p className="font-display tracking-normal text-[16px] leading-none font-semibold text-white">
                 Velvet Room
               </p>
-              <p className="mt-1 text-[9px] text-white/70">закрытый лаунж · сегодня 23:30</p>
+              <p className="mt-1 text-[8.5px] text-white/70">закрытый лаунж · сегодня 23:30</p>
             </div>
           </div>
 
-          <div className="p-2.5">
+          <div className="p-3">
             <div className="flex items-center justify-between gap-2">
-              <p className="text-[9.5px] leading-snug" style={{ color: "hsl(var(--ad-fg-soft))" }}>
+              <p className="text-[9.5px] leading-snug max-w-[150px]" style={{ color: "hsl(var(--ad-fg-soft))" }}>
                 Приватный вход, NDA, пары и синглы после верификации.
               </p>
               <span
@@ -929,9 +931,9 @@ const SceneAfterDark = ({ frame }: { frame: number }) => {
               </span>
             </div>
 
-            <div className="mt-2 flex items-center gap-1.5">
+            <div className="mt-2.5 grid grid-cols-3 gap-1.5">
               <span
-                className="h-6 px-2 rounded-full flex items-center gap-1 text-[9px] font-bold border"
+                className="h-6 rounded-full flex items-center justify-center gap-1 text-[8.5px] font-bold border"
                 style={{
                   borderColor: "hsl(var(--ad-border))",
                   color: "hsl(var(--ad-fg-soft))",
@@ -941,29 +943,43 @@ const SceneAfterDark = ({ frame }: { frame: number }) => {
                 👥 24 / 30
               </span>
               <span
-                className="h-6 px-2 rounded-full flex items-center gap-1 text-[9px] font-bold border"
+                className="h-6 rounded-full flex items-center justify-center gap-1 text-[8.5px] font-bold border"
                 style={{
                   borderColor: "hsl(var(--ad-border))",
                   color: "hsl(var(--ad-fg-soft))",
                   background: "hsl(var(--ad-bg) / 0.48)",
                 }}
               >
-                <MapPin className="w-3 h-3" /> центр
+                <MapPin className="w-2.5 h-2.5" /> центр
               </span>
               <span
-                className="h-6 px-2 rounded-full flex items-center gap-1 text-[9px] font-bold border"
+                className="h-6 rounded-full flex items-center justify-center gap-1 text-[8.5px] font-bold border"
                 style={{
                   borderColor: "hsl(var(--ad-cyan) / 0.35)",
                   color: "hsl(var(--ad-cyan))",
                   background: "hsl(var(--ad-cyan) / 0.12)",
                 }}
               >
-                <ShieldCheck className="w-3 h-3" /> Кодекс
+                <ShieldCheck className="w-2.5 h-2.5" /> Кодекс
               </span>
             </div>
-            <p className="mt-2 text-[8.5px] truncate" style={{ color: "hsl(var(--ad-fg-mute))" }}>
-              Кодекс согласия включен · no photo · awareness team
-            </p>
+            <div
+              className="mt-2.5 rounded-2xl border p-2 flex items-start gap-2"
+              style={{
+                borderColor: "hsl(var(--ad-cyan) / 0.24)",
+                background: "hsl(var(--ad-cyan) / 0.08)",
+              }}
+            >
+              <ShieldCheck className="w-3.5 h-3.5 shrink-0 mt-0.5" style={{ color: "hsl(var(--ad-cyan))" }} />
+              <div className="min-w-0">
+                <p className="text-[9px] font-bold leading-tight text-white">
+                  Кодекс согласия включен
+                </p>
+                <p className="mt-0.5 text-[8px] truncate" style={{ color: "hsl(var(--ad-fg-mute))" }}>
+                  no photo · awareness team
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
