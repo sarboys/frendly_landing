@@ -565,6 +565,9 @@ const Landing = () => {
         </div>
       </section>
 
+      {/* ANIMATED DEMO */}
+      <AnimatedDemo />
+
       {/* FEATURES — interactive showcase */}
       <FeaturesShowcase />
 
@@ -604,9 +607,6 @@ const Landing = () => {
           </div>
         </div>
       </section>
-
-      {/* ANIMATED DEMO */}
-      <AnimatedDemo />
 
       {/* EVENTS GALLERY — editorial gazette */}
       <section id="events" className="max-w-[1240px] mx-auto px-5 sm:px-8 py-28 md:py-36">
